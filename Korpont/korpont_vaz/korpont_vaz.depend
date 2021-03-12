@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1613574137 source:c:\users\kaczu\desktop\codeblocks\korpont\korpont_vaz\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"point.h"
+	"circle.h"
+
+1613576727 c:\users\kaczu\desktop\codeblocks\korpont\korpont_vaz\point.h
+
+1613577548 c:\users\kaczu\desktop\codeblocks\korpont\korpont_vaz\circle.h
+

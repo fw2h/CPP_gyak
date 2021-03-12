@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1613578399 source:c:\users\kaczu\desktop\codeblocks\area51\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"point.h"
+	"circle.h"
+
+1613574137 c:\users\kaczu\desktop\codeblocks\area51\point.h
+
+1613574137 c:\users\kaczu\desktop\codeblocks\area51\circle.h
+	"point.h"
+
+1613574137 source:c:\users\kaczu\desktop\codeblocks\area51\circle.cpp
+	"circle.h"
+
+1613574137 source:c:\users\kaczu\desktop\codeblocks\area51\point.cpp
+	<cmath>
+	"point.h"
+

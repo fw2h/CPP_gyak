@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1612972092 source:c:\users\kaczu\desktop\codeblocks\elsogyak\main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<cmath>
+

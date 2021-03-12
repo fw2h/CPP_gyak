@@ -1,0 +1,212 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+struct Kaktusz
+{
+    string nev;
+    string os;
+    string szin;
+	int meret;
+};
+
+
+// [2]
+istream& operator >>(istream& in, Kaktusz& k)
+{
+	return in >> k.nev >> k.os >> k.szin >> k.meret;
+}
+
+ostream& operator <<(ostream& out, const Kaktusz& k)
+{
+	return out << k.nev << /*" " << k.os << " " << k.szin << " " << k.meret << */endl;
+}
+
+
+// [1]
+enum Status
+{
+    NORM,
+    ABNORM
+};
+
+void read(Status& st, Kaktusz k, istream& in)
+{
+    in >> k;
+    st = in.fail() ? ABNORM : NORM;
+}
+
+void write(const Kaktusz& k, ostream& out)
+{
+    out << k;
+}
+
+
+// [3]
+// FRIENDS
+
+
+/*
+// [4]
+enum FileError
+{
+    OPEN_ERROR
+};
+
+class InFileEnor
+{
+private:
+    ifstream in;
+    Kaktusz c;
+
+public:
+    InFileEnor(const string& name) : in(name)
+    {
+        if (in.fail())
+            throw OPEN_ERROR;
+    }
+
+    void first() { next(); }
+    void next() { in >> c; }
+    Kaktusz current() const { return c; }
+    bool end() const { return in.fail(); }
+};
+*/
+
+
+/*class InFile
+{
+    ifstream in;
+
+public:
+    InFile(const string& name) : in(name)
+    {
+        if (in.fail())
+            throw OPEN_ERROR;
+    }
+
+    Kaktusz read(Status& st)
+    {
+        Kaktusz c;
+        in >> c;
+        st = in.fail() ? ABNORM : NORM;
+        return c;
+    }
+};
+
+class OutFile
+{
+    ofstream out;
+
+public:
+    OutFile(const string& name) : out(name)
+    {
+        if (out.fail())
+            throw OPEN_ERROR;
+    }
+
+    void write(const Kaktusz& c)
+    {
+        out << c;
+    }
+};*/
+
+
+// [0]
+int select(const string& in_name, const string& out1_name, const string& out2_name)
+{
+	ifstream in(in_name);
+	if (in.fail())
+	{
+		cerr << "Hiba az input fajl megnyitasakor." << endl;
+		return 1;
+	}
+    ofstream out1(out1_name);
+	if (out1.fail())
+    {
+		cerr << "Hiba az elso output fajl megnyitasakor." << endl;
+		return 2;
+	}
+    ofstream out2(out2_name);
+	if (out2.fail())
+    {
+		cerr << "Hiba a masodik output fajl megnyitasakor." << endl;
+		return 3;
+	}
+
+	Kaktusz k;
+    in >> k;
+    // read ~ operator>>; st ~ in.fail() (abnorm=true, norm=false)
+    while (!in.fail())
+	{
+        if (k.szin == "piros")
+			out1 << k << endl;
+        if (k.os == "mexico")
+            out2 << k << endl;
+        in >> k;
+    }
+	return 0;
+}
+
+//#define NORMAL_MODE
+#ifdef NORMAL_MODE
+
+int main()
+{
+    return select("inp.txt", "out_piros.txt", "out_mexikoi.txt");
+}
+
+#else
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+
+
+unsigned int countLines(const char* name)
+{
+    // SZAMLALAS (c ~ db, t:enor ~ file:infile(S))
+	ifstream file(name);
+	unsigned int db = 0;
+    string line;
+    while (getline(file, line))
+		++db;
+	return db;
+}
+
+TEST_CASE("Ures lista", "inp0.txt")
+{
+	select("inp0.txt", "out0_piros.txt", "out0_mexikoi.txt");
+    CHECK(0 == countLines("out0_piros.txt"));
+    CHECK(0 == countLines("out0_mexikoi.txt"));
+}
+
+TEST_CASE("Egy kaktusz, piros es mexikoi is", "inp1.txt")
+{
+	select("inp1.txt", "out1_piros.txt", "out1_mexikoi.txt");
+    CHECK(1 == countLines("out1_piros.txt"));
+    CHECK(1 == countLines("out1_mexikoi.txt"));
+}
+
+TEST_CASE("Ket kaktusz, vegyes", "inp2.txt")
+{
+	select("inp2.txt", "out2_piros.txt", "out2_mexikoi.txt");
+    CHECK(2 == countLines("out2_piros.txt"));
+    CHECK(1 == countLines("out2_mexikoi.txt"));
+}
+
+TEST_CASE("Ket kaktusz, vagy piros, vagy mexikoi", "inp3.txt")
+{
+	select("inp3.txt", "out3_piros.txt", "out3_mexikoi.txt");
+    CHECK(1 == countLines("out3_piros.txt"));
+    CHECK(1 == countLines("out3_mexikoi.txt"));
+}
+
+TEST_CASE("Sok kaktusz, vegyes", "inp4.txt")
+{
+	select("inp4.txt", "out4_piros.txt", "out4_mexikoi.txt");
+    CHECK(2 == countLines("out4_piros.txt"));
+    CHECK(2 == countLines("out4_mexikoi.txt"));
+}
+
+#endif

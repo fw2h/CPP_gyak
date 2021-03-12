@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1613218441 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\circle.cpp
+	"circle.h"
+
+1613217692 d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\circle.h
+	"point.h"
+
+1613219148 d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\point.h
+
+1613224471 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"menu.h"
+
+1613219154 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\point.cpp
+	<cmath>
+	"point.h"
+
+1613224532 d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\02\seged\korpont_menu\menu.h
+	<iostream>
+	<vector>
+	"point.h"
+	"circle.h"
+

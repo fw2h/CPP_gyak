@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1614093620 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\03\seged\prio_sor_vaz\main.cpp
+	<vector>
+	"menu.h"
+
+1613814877 d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\03\seged\prio_sor_vaz\menu.h
+	"priorsor.h"
+
+1614174431 d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\03\seged\prio_sor_vaz\priorsor.h
+	<iostream>
+	<vector>
+
+1613818600 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\03\seged\prio_sor_vaz\priorsor.cpp
+	"priorsor.h"
+
+1614174114 source:d:\documents\elte\szemeszter\2020-2021_2\objektumelvu programozas [demonstrator]\anyagok\03\seged\prio_sor_vaz\menu.cpp
+	"menu.h"
+
+1614178922 source:c:\users\kaczu\desktop\codeblocks\prqueue\prio_sor_vaz\main.cpp
+	<vector>
+	"menu.h"
+
+1614178922 c:\users\kaczu\desktop\codeblocks\prqueue\prio_sor_vaz\menu.h
+	"priorsor.h"
+
+1614181167 c:\users\kaczu\desktop\codeblocks\prqueue\prio_sor_vaz\priorsor.h
+	<iostream>
+	<vector>
+
+1614178922 source:c:\users\kaczu\desktop\codeblocks\prqueue\prio_sor_vaz\menu.cpp
+	"menu.h"
+
+1614180182 source:c:\users\kaczu\desktop\codeblocks\prqueue\prio_sor_vaz\priorsor.cpp
+	"priorsor.h"
+

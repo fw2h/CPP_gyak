@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1614448842 source:c:\users\hp\desktop\codeblock\complex\main.cpp
+	<iostream>
+	"menu.h"
+
+1614455082 c:\users\hp\desktop\codeblock\complex\menu.h
+	<iostream>
+	<vector>
+	"complex.h"
+
+1614503586 c:\users\hp\desktop\codeblock\complex\complex.h
+	<ostream>
+
+1614505100 source:c:\users\hp\desktop\codeblock\complex\menu.cpp
+	"menu.h"
+
+1614505441 source:c:\users\hp\desktop\codeblock\complex\complex.cpp
+	"complex.h"
+
+1614605685 source:c:\users\kaczu\desktop\codeblocks\complex\main.cpp
+	<iostream>
+	"menu.h"
+
+1614591434 c:\users\kaczu\desktop\codeblocks\complex\menu.h
+	<iostream>
+	<vector>
+	"complex.h"
+
+1614605414 c:\users\kaczu\desktop\codeblocks\complex\complex.h
+	<ostream>
+
+1614605655 source:c:\users\kaczu\desktop\codeblocks\complex\menu.cpp
+	"menu.h"
+
